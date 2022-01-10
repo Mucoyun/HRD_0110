@@ -1,0 +1,91 @@
+create table member0110(
+	id number(4) not null primary key,
+	name varchar2(30) not null,
+	passwd varchar2(20) not null,
+	gender char(1),
+	email varchar2(30),
+	phone varchar2(13),
+	tel varchar2(13),
+	address varchar2(80),
+	carNumber varchar2(15),
+	carType varchar2(20)
+);
+
+desc member0110;
+
+set linesize 300;
+column id format 9999;
+column name format a20;
+column passwd format a20;
+column gender format a1;
+column email format a20;
+column phone format a20;
+column tel format a20;
+column address format a30;
+column carNumber format a20;
+column carType format a20;
+
+alter table member0110 modify(gender char(3));
+
+insert into member0110 values(1005, '강빛나', '1121', '여', 'kang33@korea.com', '010-6543-1777', '051-531-111', '부산시 영도구 봉래동', '32마2225', '쏘렌토');
+insert into member0110 values(1004, '김모닝', '4321', '남', 'kim333@korea.com', '010-3333-7777', '051-631-111', '부산시 부산진구 양정동', '22나2225', '모닝');
+insert into member0110 values(1010, '김행복', '2229', '남', 'kim11@korea.com', '010-2222-6666', '051-661-111', '부산시 사상구 주례동', '00마6625', '제네시스');
+insert into member0110 values(1003, '김행봅', '4321', '남', 'kim123@korea.com', '010-3222-7777', '051-777-111', '부산시 해운대구 반영동', '22나5555', '티코');
+insert into member0110 values(1006, '박축복', '3331', '남', 'park33@korea.com', '010-4567-1777', '051-444-111', '부산시 동래구 명륜동', '31사2225', 'SM7');
+insert into member0110 values(1002, '이순신', '3333', '남', 'lee123@korea.com', '010-3222-1111', '051-222-111', '부산시 금정구 부곡동', '22나1234', '페라리');
+insert into member0110 values(1001, '이인순', '1234', '여', 'lee@korea.com', '010-1111-1111', '051-111-111', '부산시 금정구 장전동', '11가1234', '싼타페');
+insert into member0110 values(1007, '장믿음', '3355', '남', 'jang33@korea.com', '010-4567-6667', '051-322-111', '부산시 동래구 온천동', '31사8825', 'SM5');
+insert into member0110 values(1008, '진평화', '9999', '여', 'jin3@korea.com', '010-7666-6667', '051-882-111', '부산시 동래구 수안동', '31사6625', '스포티지');
+insert into member0110 values(1009, '차공단', '1119', '남', 'cha11@korea.com', '010-2222-6667', '051-222-111', '부산시 중구 대청동', '55마6625', '스포티지');
+
+select * from member0110;
+
+
+create table part0110(
+	partCode varchar2(10) not null primary key,
+	partName varchar2(50) not null,
+	model varchar2(45),
+	standard varchar2(45),
+	unit varchar2(45),
+	purchase number(10),
+	sales number(10),
+	memo varchar2(100)
+);
+
+column partCode format a20;
+column partName format a20;
+column model format a20;
+column standard format a20;
+column unit format a20;
+column purchase format 9999999999;
+column sales format 9999999999;
+column memo format a20;
+
+insert into part0110 values('B-01-BUD', '부동액', 'BUDONG-L-AK', 'BUdong', '20L', 18000, 25000, 'HYUNDAE MOBIS');
+insert into part0110 values('B-01-BUMP', 'BUMPER', 'BUMP-P-99', 'Bum', 'EA', 300000, 450000, '현대 MOBile');
+insert into part0110 values('B-01-LIT', 'LIGHT', 'BACK-L-09', 'Back', 'EA', 45000, 76000, 'KIA MOTORS');
+insert into part0110 values('B-01-T001', '브레이크패드', 'BP-T001', '100x200', 'set', 45000, 76000, '만도 브레이크패드');
+insert into part0110 values('C-01-S002', '센서', 'CEN-K01', 'C2', 'EA', 45000, 65000, '현대 센서');
+insert into part0110 values('M-01-BackM', '백미러', 'BACK-M-10', 'BK', 'EA', 150000, 210000, '현대 MOBile');
+insert into part0110 values('O-01-BOIL', '브레이크오일', 'BR-OIL-10', '20L', 'EA', 67000, 98000, 'SK 오일');
+insert into part0110 values('O-01-E001', '엔진오일', 'OIL-020', '20L', 'EA', 89000, 125000, 'SK 오일');
+insert into part0110 values('T-01-H001', '타이어', 'TIR-01', '175R', 'EA', 150000, 210000, '한국타이어');
+insert into part0110 values('T-01-K002', '타이어', 'TIR-K01', '165R', 'EA', 140000, 200000, '금호타이어');
+
+select * from part0110;
+
+
+
+
+create sequence id_seq0110
+	increment by 1
+	start with 1001
+	maxvalue 9999
+	cycle
+;
+
+select id_seq0110.nextval from dual;
+select id_seq0110.currval from dual;
+
+
+
